@@ -26,7 +26,7 @@ let package = Package(
                 "SDWebImageWebPCoder",
                 "PrimJS"
             ],
-            path: "Sources/LynxKit"
+            path: "Sources/LynxSPM"
         )
     ]
 )
