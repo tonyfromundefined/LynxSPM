@@ -5,42 +5,28 @@ import PackageDescription
 
 let package = Package(
     name: "LynxSPM",
-    platforms: [
-        .iOS(.v13)
-    ],
+    platforms: [.iOS(.v13)],
     products: [
-        .library(name: "Lynx", targets: ["Lynx"]),
-        .library(name: "LynxService", targets: ["LynxService"]),
+        .library(name: "LynxSPM", targets: ["LynxSPM"]),
     ],
     dependencies: [],
     targets: [
-        .binaryTarget(
-            name: "PrimJS",
-            path: "./Sources/PrimJS.xcframework"
-        ),
-        .binaryTarget(
-            name: "SDWebImageWebPCoder",
-            path: "./Sources/SDWebImageWebPCoder.xcframework"
-        ),
-        .binaryTarget(
-            name: "SDWebImage",
-            path: "./Sources/SDWebImage.xcframework"
-        ),
-        .binaryTarget(
-            name: "Lynx",
-            path: "./Sources/Lynx.xcframework",
+        .binaryTarget(name: "PrimJS", path: "./Sources/PrimJS.xcframework"),
+        .binaryTarget(name: "SDWebImageWebPCoder", path: "./Sources/SDWebImageWebPCoder.xcframework"),
+        .binaryTarget(name: "SDWebImage", path: "./Sources/SDWebImage.xcframework"),
+        .binaryTarget(name: "Lynx", path: "./Sources/Lynx.xcframework"),
+        .binaryTarget(name: "LynxService", path: "./Sources/LynxService.xcframework"),
+
+        .target(
+            name: "LynxSPM",
             dependencies: [
-                "PrimJS"
-            ]
-        ),
-        .binaryTarget(
-            name: "LynxService",
-            path: "./Sources/LynxService.xcframework",
-            dependencies: [
+                "LynxService",
                 "Lynx",
                 "SDWebImage",
-                "SDWebImageWebPCoder"
-            ]
+                "SDWebImageWebPCoder",
+                "PrimJS"
+            ],
+            path: "Sources/LynxKit"
         )
     ]
 )
