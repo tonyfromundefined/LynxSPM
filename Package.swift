@@ -7,7 +7,7 @@ let package = Package(
     name: "LynxSPM",
     platforms: [.iOS(.v13)],
     products: [
-        .library(name: "LynxSPM", targets: ["LynxSPM"]),
+        .library(name: "LynxSPM", targets: ["LynxModules"]),
     ],
     dependencies: [],
     targets: [
@@ -18,7 +18,7 @@ let package = Package(
         .binaryTarget(name: "LynxService", path: "./Sources/LynxService.xcframework"),
 
         .target(
-            name: "LynxSPM",
+            name: "LynxModules",
             dependencies: [
                 "LynxService",
                 "Lynx",
@@ -26,7 +26,7 @@ let package = Package(
                 "SDWebImageWebPCoder",
                 "PrimJS"
             ],
-            path: "Sources/LynxSPM"
+            path: "Sources/LynxModules"
         )
     ]
 )
