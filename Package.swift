@@ -16,6 +16,7 @@ let package = Package(
         .binaryTarget(name: "SDWebImage", path: "./Sources/SDWebImage.xcframework"),
         .binaryTarget(name: "Lynx", path: "./Sources/Lynx.xcframework"),
         .binaryTarget(name: "LynxService", path: "./Sources/LynxService.xcframework"),
+        .binaryTarget(name: "libwebp", path: "./Sources/libwebp.xcframework"),
 
         .target(
             name: "LynxModules",
@@ -24,7 +25,8 @@ let package = Package(
                 "Lynx",
                 "SDWebImage",
                 "SDWebImageWebPCoder",
-                "PrimJS"
+                "PrimJS",
+                "libwebp"
             ],
             path: "Sources/LynxModules"
         )
